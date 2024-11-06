@@ -1,0 +1,33 @@
+.TH SEEDBOX 1
+.SH NAME
+seedbox \- bittorrent manager
+.SH SYNOPSIS
+.B ip/seedbox
+[
+.B -w
+.I seconds
+]
+.I tdir
+[
+.I ddir
+]
+.SH DESCRIPTION
+.I Seedbox
+watches
+.I tdir
+for .torrent files.
+It keeps one instance of
+.IR torrent (1)
+for each of them, stopping the instance when the
+torrent file is removed.  Files will be downloaded into, or
+seeded from,
+.I ddir.
+If it is not specified,
+.I tdir
+will be used.
+The
+.B -w
+flag sets how often seedbox rescans the directory for
+changed files, the default is 30 seconds.
+.SH "SEE ALSO"
+.IR torrent (1)
